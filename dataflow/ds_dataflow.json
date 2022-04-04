@@ -1,0 +1,45 @@
+{
+	"name": "ds_dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_input",
+						"type": "DatasetReference"
+					},
+					"name": "dssource"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dsout",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColLoad"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          User as string,",
+				"          {User Credintails} as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> dssource",
+				"dssource derive(LoadedDate = currentDate()) ~> derivedColLoad",
+				"derivedColLoad sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}
