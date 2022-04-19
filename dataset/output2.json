@@ -1,0 +1,22 @@
+{
+	"name": "output2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Blob_LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "outpu2",
+				"container": "sdemostorage"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
