@@ -5,13 +5,13 @@
 		"factoryName": {
 			"value": "SDemoDF"
 		},
+		"Blob_LS_connectionString": {
+			"value": ""
+		},
 		"LSBlobStorage_connectionString": {
 			"value": ""
 		},
 		"ds_LS_connectionString": {
-			"value": ""
-		},
-		"Blob_LS_connectionString": {
 			"value": ""
 		},
 		"containerUri": {

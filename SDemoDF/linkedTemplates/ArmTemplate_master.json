@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "SDemoDF"
 		},
+		"Blob_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Blob_LS'"
+		},
 		"LSBlobStorage_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LSBlobStorage'"
@@ -14,10 +18,6 @@
 		"ds_LS_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ds_LS'"
-		},
-		"Blob_LS_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'Blob_LS'"
 		},
 		"containerUri": {
 			"type": "string",
@@ -46,14 +46,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"Blob_LS_connectionString": {
+						"value": "[parameters('Blob_LS_connectionString')]"
+					},
 					"LSBlobStorage_connectionString": {
 						"value": "[parameters('LSBlobStorage_connectionString')]"
 					},
 					"ds_LS_connectionString": {
 						"value": "[parameters('ds_LS_connectionString')]"
-					},
-					"Blob_LS_connectionString": {
-						"value": "[parameters('Blob_LS_connectionString')]"
 					}
 				}
 			},
